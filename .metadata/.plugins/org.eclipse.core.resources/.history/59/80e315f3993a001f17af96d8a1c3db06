@@ -1,0 +1,15 @@
+
+public class LoopDemo {
+
+	public static void main(String[] args) {
+		// A ~ Z 까지 출력하기 
+		int i = 65; // 초기화 initialization  /1번
+		for ( ; i<=90; i++) {   //2번
+			System.out.printf("%c\t",(char) i );
+			
+		}
+//		System.out.println();
+
+	}
+
+}

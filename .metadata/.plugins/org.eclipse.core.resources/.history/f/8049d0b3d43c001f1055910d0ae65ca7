@@ -1,0 +1,21 @@
+
+public class DoDemo {
+
+	public static void main(String[] args) {
+	 //4! = 4x3x2x1
+		String y_n;
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		do{
+				
+			System.out.print(" 몇 Factorial ? :");
+			int su = sc.nextInt();
+			int answer = 1;
+			for (int i = su ; i > 0 ; i--) {
+				answer *= i;
+			}
+			System.out.println(su + "!= " + answer);
+			System.out.println("Again(y/n)?");
+			String y_n = sc.next()
+		}(y_n.)
+	}
+}

@@ -1,0 +1,14 @@
+
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+		int [] age; //선언 4바이트짜리 정수 담을 age 필요해 / [] 를 추가하면 8바이트
+		age = new int[4]; //creation
+		age[0] = 6; age[1] = 7; age[2] = 8; age[3] = 9;
+		
+		age = 28; //할당 
+		String name = "한지민"; //초기화 initialization
+
+	}
+
+}

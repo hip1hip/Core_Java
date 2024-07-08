@@ -1,0 +1,18 @@
+
+public class VariableDemo {
+	public static void main(String[] args) {
+//		String name; //변수선언 Variable Declration
+//		name = "홍인표" // 할당 Assignment
+//		String email = "hip1hip@naver.com" //초기화 
+		
+//		System.out.printf("숫자 5 = %d\n", 500);
+//		System.out.printf("숫자 5 = %o\n", 500);
+//		System.out.printf("숫자 5 = %x\n", 500);
+		
+		short a = 5;
+		short b = 7;
+		short sum = 5+7;
+		System.out.println(sum);
+		
+	}
+}

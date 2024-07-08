@@ -1,0 +1,9 @@
+
+public class ProductMgmt {
+
+	public static void main(String[] args) {
+		Product pencil = new Product();
+
+	}
+
+}

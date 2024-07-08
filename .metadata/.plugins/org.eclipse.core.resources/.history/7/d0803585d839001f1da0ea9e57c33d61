@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class VariableDemo1 {
+
+	public static void main(String[] args) {
+		Scanner sc = Scanner(System.in);
+		System.out.println("국어점수 : ");
+		sc.nextLine();
+		System.out.println("수학점수 : ");
+	}
+
+}

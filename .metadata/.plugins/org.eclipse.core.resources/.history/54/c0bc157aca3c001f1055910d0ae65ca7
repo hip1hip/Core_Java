@@ -1,0 +1,11 @@
+
+public class ABCD {
+
+	public static void main(String[] args) {
+		
+		char A = 71;
+		System.out.println('A');
+
+	}
+
+}

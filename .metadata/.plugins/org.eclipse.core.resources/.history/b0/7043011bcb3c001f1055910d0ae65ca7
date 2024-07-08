@@ -1,0 +1,14 @@
+
+public class ABCD {
+
+	public static void main(String[] args) {
+		
+		char A = 71;
+		
+		for ( char i = 65; i <=122; i++) {
+			System.out.println(i);
+		}
+
+	}
+
+}

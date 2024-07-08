@@ -1,0 +1,17 @@
+
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+//		int [] age; //선언 4바이트짜리 정수 담을 age 필요해 / [] 를 추가하면 8바이트
+//		age = new int[4]; //creation 선언 / 뉴라는 연산자로 메모리 힙에 저장해야해서 
+//		age[0] = 6; age[1] = 7; age[2] = 8; age[3] = 9; // 할당 
+//		
+////		char [] array = new char[] {'a', 'b' , 'c'}; 이것도 가능하지만 
+//		char [] array = {'a', 'b' , 'c'}; // 간단하게 생략  // 무조건 초기화는 같은 한줄에 적어야함.  
+		
+		String [] array = {"Hello", "World", "Good", "A"};
+		
+
+		
+	}
+}
