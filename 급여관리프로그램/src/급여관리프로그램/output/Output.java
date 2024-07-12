@@ -1,9 +1,12 @@
-package 급여관리프로그램;
+package 급여관리프로그램.output;
 
 import java.text.DecimalFormat;
 
+import 급여관리프로그램.Employee;
+import 급여관리프로그램.Employees;
+
 public class Output {
-	    public void displayEmployeeData(Employee[] employees) {
+	    public void displayEmployeeData(Employees employees) {
 	        // Quick Sort로 정렬
 //	        quickSort(employees, 0, employees.length - 1);
 	        // 출력 화면
@@ -15,40 +18,33 @@ public class Output {
 	        System.out.println();
 	        System.out.println("-----------------------------------");
 	        
-	        for (Employee employee : employees) {
-	        	if(!employee.getIsInit()) {
-	        		continue;
-	        	}
+	        for (int i = 0; i < employees.getSize(); i++) {
+	        	Employee employee = employees.getEmployee(i);
 	        	
-	        	
-	        	
-	        	
-	     
-	        	
-	        	
-	            System.out.printf("%02d\t", employee.getEmpId());
-	            System.out.printf("%d\t", employee.getGrade());
-	            System.out.printf("%d\t", employee.getStep());
-	            System.out.printf("%s\t", df.format(employee.getAllowance()));
-	            System.out.printf("%s\t", df.format(employee.getSalary()));
-	            System.out.printf("%s\t", df.format(employee.getTax()));
-	            System.out.printf("%s\t", df.format(employee.getAdjustedSalary()));
-	            System.out.println();
-	            
-	        }
+	        	System.out.printf("%02d\t", employee.getEmpId());
+	        	System.out.printf("%d\t", employee.getGrade());
+	        	System.out.printf("%d\t", employee.getStep());
+	        	System.out.printf("%s\t", df.format(employee.getAllowance()));
+	        	System.out.printf("%s\t", df.format(employee.getSalary()));
+	        	System.out.printf("%s\t", df.format(employee.getTax()));
+	        	System.out.printf("%s\t", df.format(employee.getAdjustedSalary()));
+	        	System.out.println();
+				
+			}
+	        
+	        System.out.println();
 	        
 	        
 	        System.out.println("입력데이터 출력");
-	        for (Employee employee : employees) {
-	        	if (!employee.getIsInit()) {
-					continue;
-				}
-		        System.out.printf("%02d\t", employee.getEmpId());
-		        System.out.printf("%d\t", employee.getGrade());
-		        System.out.printf("%d\t", employee.getStep());
-		        System.out.printf("%s\t", df.format(employee.getAllowance()));
-		        System.out.println();
-	        }
+	        for (int i = 0; i < employees.getSize(); i++) {
+	        	Employee employee = employees.getEmployee(i);
+	        	System.out.printf("%02d\t", employee.getEmpId());
+	        	System.out.printf("%d\t", employee.getGrade());
+	        	System.out.printf("%d\t", employee.getStep());
+	        	System.out.printf("%s\t", df.format(employee.getAllowance()));
+	        	System.out.println();
+				
+			}
 	    }
 	    // Quick Sort 구현
 //	    private static void quickSort(List<Employee> list, int low, int high) {

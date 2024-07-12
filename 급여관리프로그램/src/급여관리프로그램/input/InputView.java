@@ -1,4 +1,7 @@
-package 급여관리프로그램;
+package 급여관리프로그램.input;
+
+import 급여관리프로그램.Employee;
+import 급여관리프로그램.Employees;
 
 public class InputView {
     private ConsoleReader reader;
@@ -7,7 +10,7 @@ public class InputView {
         this.reader = reader;
     }
 
-    public void inputEmployees(Employee[] employees) {
+    public int inputEmployees(Employees employees) {
         String isInput = "";
         int index = 0;
 
@@ -21,10 +24,12 @@ public class InputView {
             System.out.print("수당: "); // 출력
             int salary = reader.nextInt();
 
-            employees[index++] = new Employee(empId, grade, level, salary);
+            employees.add(new Employee(empId, grade, level, salary));
 
             System.out.print("입력/출력(I/O)? ");
             isInput = reader.read();
         } while(isInput.equalsIgnoreCase("i"));
+        
+        return index;
     }
 }

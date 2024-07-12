@@ -1,4 +1,4 @@
-package 급여관리프로그램;
+package 급여관리프로그램.input;
 
 public class Console {
     private static java.util.Scanner scanner;
