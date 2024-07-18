@@ -1,0 +1,22 @@
+import java.util.Arrays;
+import java.util.List;
+
+public class LambdaDemo8 {
+	public static void main(String[] args) {
+		List<String> list = Arrays.asList("사과", "배","딸기","복숭아","레몬","수박");
+		// list에 저장된 각 element를 iterate해서 출력하기
+		
+		//1nd way
+		for (int i=0; i< list.size(); i++) {
+			System.out.println(list.get(i) + " , " );
+		}
+		System.out.println();
+		//2nd way
+		
+		for(String str : list) System.out.println(str + " , " );
+		System.out.println();
+		
+		//3nd way
+		list.forEach(str -> System.out.print(str + ","));
+	}
+}
