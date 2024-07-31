@@ -10,27 +10,25 @@ import java.util.Properties;
 public class DBConnection {
 	private Properties info;
 	
-	public DBConnection () {
+	public DBConnection() {
 		this.info = new Properties();
 		File file = new File("dbinfo.properties");
 		try {
 			this.info.load(new FileInputStream(file));
 		} catch (IOException e) {
-			System.out.println("File not found");
+			System.out.println("File Not Found");
 		}
 	}
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
-			Class.forName(this.info.getProperty("DBDRIVER")); //2. Driver Loading 하자. 
-			conn = DriverManager.getConnection(this.info.getProperty("DBURL"),
-					this.info.getProperty("DBUSER"),
-					this.info.getProperty("DBPASSWD"));
+			Class.forName(this.info.getProperty("DBDRIVER"));//2. Driver Loading 하자.
+			conn = DriverManager.getConnection(this.info.getProperty("DBURL"), 
+					                                             this.info.getProperty("DBUSER"),
+					                                             this.info.getProperty("DBPASSWD"));
 		} catch (ClassNotFoundException | SQLException ex) {
-			System.out.println(ex.getMessage()); 
-			
+			System.out.println(ex.getMessage());
 		}
-		
 		return conn;
 	}
 }

@@ -12,7 +12,10 @@ public class ArrayDemo3 {
 		
 		int [] original = {3,4,5};
 		int [] target = new int[10];	
-		System.arraycopy(original, 0, target, 9, 3); //마지막은 몇개 가져올거야?
+		System.arraycopy(original, 0, target, 0, original.length); //마지막은 몇개 가져올거야?
 		//오리진의 몇번째의 타겟의 몇번쨰에 몇개를 가져올거야? 
+		for (int i = 0; i<target.length; i++) {
+			System.out.print(target[i] + ",");
+		}
 	}
 }

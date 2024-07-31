@@ -14,6 +14,7 @@ public class Student {
 		this.mat = mat;
 		this.edp = edp;
 	}
+	this() 메서드. 
 
 	public String getHakbun() {
 		return hakbun;
@@ -86,6 +87,20 @@ public class Student {
 	public void setGrade(char grade) {
 		this.grade = grade;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Student [hakbun=%s, name=%s, kor=%s, eng=%s, mat=%s, edp=%s, tot=%s, avg=%s, grade=%s]",
+				hakbun, name, kor, eng, mat, edp, tot, avg, grade);
+	} //toString() 내가 원하는 객체로 바꿈 
+	
+//	@Override
+//	public String toString() {
+//		return String.format("%-5s\t %7s\t %5d\t %5d\t %5d\t %5d\t %5d\t %8.1f\t %5c%n" , 
+//				this.hakbun, this.name, this.kor, this.eng, this.mat, this.edp, this.tot, this.avg, this.grade);
+//		//format 문자String을 형식화함, 
 	
 	
-}
+	}
+	
+

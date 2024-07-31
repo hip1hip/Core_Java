@@ -12,8 +12,8 @@ public class SungjukMgmt {
 		input.input();
 		Calc calc = new Calc(list);
 		calc.calc();
-		Sort sort = new Sort(list);
-		sort.quickSortiong();
+//		Sort sort = new Sort(list);
+//		sort.quickSortiong();
 		Output output = new Output(list);
 		output.output();
 		System.out.println("Program is over .....");

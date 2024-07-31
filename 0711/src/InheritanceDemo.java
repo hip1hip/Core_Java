@@ -4,10 +4,10 @@ public class InheritanceDemo {
 		Dog dog = new Dog();
 		System.out.println(dog.name);
 		
-		public void print() {
-			System.out.println("나는 포유류다,");
-		}
-		
+//		public void print() {
+//			System.out.println("나는 포유류다,");
+//		}
+//		
 		
 		
 //		Cat cat = new Cat();

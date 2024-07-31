@@ -3,8 +3,8 @@
 
 public class HelloWorld5 {
 	public static void main(String[] args) {
-		//HelloWorld5.print(); //정석
-		print(); //생략 
+		HelloWorld5.print(); //정석
+		//print(); //생략 
 	}
 	static void print() {  //static , class method
 		System.out.println("Hello , World");

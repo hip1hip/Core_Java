@@ -1,3 +1,6 @@
+SQLEditor.extraPanels.ratio=500-500
+SQLEditor.resultSet.ratio=500-500
 comment_stylePreferences=NONE
 comment_text=false
 eclipse.preferences.version=1
+quickdiff.quickDiff=false

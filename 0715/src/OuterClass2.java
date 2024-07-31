@@ -13,7 +13,7 @@ public class OuterClass2 {
 			void print() {
 				
 			}
-		}
+		} 
 		InnerClass2 ic = new InnerClass2();
 		System.out.println(ic.b);  //why? 맴버변수니깐. 
 		System.out.println(InnerClass2.c); //why? 스태틱이니깐... 
