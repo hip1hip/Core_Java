@@ -11,5 +11,27 @@ public class Main {
 
         ChickenMenu order1 = store1.orderMenu("양념치킨");
         ChickenMenu order2 = store1.orderMenu("오븐구이");
+
+        int int1 = 1;
+        int int2 = int1;
+        int1 = 2;
+
+        String str1 = "헬로";
+        String str2 = str1;
+        str2 = "월드";
+
+        ChickenMenu menu1 = new ChickenMenu("후라이드", 1000);
+        ChickenMenu menu2 = menu1;
+        menu1.price = 1200;
+
+
+        int avgChickenPrice = 12000;
+        ChickenMenu chickenMenu1 = new ChickenMenu("양념치킨", 12000);
+
+        raisePrice(avgChickenPrice, chickenMenu1, 1000);
+    }
+    public static void raisePrice (int avg, ChickenMenu menu, int amount) {
+        avg += amount;
+        menu.price += amount;
     }
 }
