@@ -5,7 +5,7 @@ public class YalcoChicken {
     String name;
     ChickenMenu[] menus;
 
-    YalcoChicken (int no, String name, ChickenMenu[] menus) {
+     YalcoChicken (int no, String name, ChickenMenu[] menus) {
         this.no = no;
         this.name = name;
         this.menus = menus;
