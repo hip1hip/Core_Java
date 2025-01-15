@@ -32,7 +32,7 @@ public class Post {
 //    @OneToMany
 //    private List<Comment> comments;
 
-//    public Comment getComment() {
-//        return getComment();
-//    }
+    public List<Comment> getComment() {
+        return getComment();
+    }
 }

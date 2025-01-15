@@ -3,6 +3,7 @@ package com.example.board.controller;
 
 import com.example.board.dto.CommentDto;
 import com.example.board.entity.Comment;
+import com.example.board.entity.Post;
 import com.example.board.service.CommentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -11,14 +12,14 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/comments")
+@RequestMapping("/posts/{post_id}/comments")
 public class CommentController {
 
     private final CommentService commentService;
 
     @PostMapping
-    public Comment createComment(@RequestBody CommentDto commentDto){
-        return commentService.createComment(commentDto);
+    public Comment createComment(@RequestBody CommentDto commentDto, @PathVariable Long post_id){
+        return commentService.createComment(commentDto,post_id);
     }
 
     @GetMapping
@@ -26,17 +27,17 @@ public class CommentController {
         return commentService.getAllComment();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{comment_id}")
     public Comment getCommentById(@PathVariable Long id){
         return commentService.getCommentById(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{comment_id}")
     public Comment updateComment(@PathVariable  Long id,@RequestBody CommentDto commentDto){
         return commentService.updateComment(id, commentDto);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{comment_id}")
     public void deleteComment(@PathVariable Long id){
         commentService.deleteComment(id);
     }

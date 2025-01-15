@@ -2,7 +2,9 @@ package com.example.board.service;
 
 import com.example.board.dto.PostRequestDto;
 import com.example.board.dto.PostResponseDto;
+import com.example.board.entity.Comment;
 import com.example.board.entity.Post;
+import com.example.board.repository.CommentRepository;
 import com.example.board.repository.PostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class PostService {
     private final PostRepository postRepository;
+    private final CommentRepository commentRepository;
 
     public List<PostResponseDto> getAllPosts(){
         List<Post> posts = postRepository.findAll(); // Post 엔티티 리스트 가져오기
@@ -25,7 +28,7 @@ public class PostService {
                     dto.setContent(post.getContent());
                     dto.setAuthor(post.getAuthor());
                     dto.setCategory(post.getCategory());
-//                    dto.setComment(post.getComment());
+                    
                     return dto;
                 })
                 .collect(Collectors.toList());
@@ -34,13 +37,19 @@ public class PostService {
     public PostResponseDto getPostById(Long id) {
         Post post = postRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Post not found with id: " + id));
+
+        List<Comment> comments = commentRepository.findById(id);
+
         PostResponseDto dto = new PostResponseDto();
         dto.setId(post.getId());
         dto.setTitle(post.getTitle());
         dto.setContent(post.getContent());
         dto.setAuthor(post.getAuthor());
         dto.setCategory(post.getCategory());
-//        dto.setComment(post.getComment());
+
+        // 댓글 목록 DTO로 변환 
+        
+
         return dto;
     }
 
