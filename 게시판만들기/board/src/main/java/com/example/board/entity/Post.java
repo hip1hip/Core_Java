@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -25,4 +28,11 @@ public class Post {
     private String author;
 
     private String category;
+
+//    @OneToMany
+//    private List<Comment> comments;
+
+//    public Comment getComment() {
+//        return getComment();
+//    }
 }
