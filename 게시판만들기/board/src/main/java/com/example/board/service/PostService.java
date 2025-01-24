@@ -77,10 +77,7 @@ public class PostService {
         post.setAuthor(requestDto.getAuthor());
         post.setCategory(requestDto.getCategory());
         Post updatedPost = postRepository.save(post);
-        // 인표님? 넵
-        // dto가 이상한대요? PostResponseDto
-        // 게시글 하나에 댓글 여러개잖아요 네넵
-        // ㅇㅋ 일단 계속해보세요~ 넵!!
+
         PostResponseDto dto = new PostResponseDto();
         dto.setId(updatedPost.getId());
         dto.setContent(updatedPost.getContent());
