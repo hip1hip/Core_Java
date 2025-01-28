@@ -4,7 +4,12 @@ import com.example.board02.domain.Board;
 
 import java.util.List;
 
-public class BoardMapper {
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+@Mapper
+@Repository  // 추가
+public interface BoardMapper {
 
     //게시글 목록 조회
     List<Board> selectBoardList();

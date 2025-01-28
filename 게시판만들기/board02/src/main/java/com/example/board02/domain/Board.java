@@ -5,13 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.time.LocalDateTime;
 
 public class Board {
-    private Long id; 
-    private String title;
-    private String content;
-    private String writer;
-    private LocalDateTime createdDate;
-    private LocalDateTime modifiedDate;
-    private int viewCount;
+    private Long id;                  // 게시글 번호
+    private String title;             // 제목
+    private String content;           // 내용
+    private String writer;            // 작성자
+    private int viewCount;            // 조회수
+    private LocalDateTime createdDate;    // 작성일
+    private LocalDateTime modifiedDate;   // 수정일
 
     public LocalDateTime getModifiedDate() {
         return modifiedDate;
