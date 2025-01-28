@@ -34,7 +34,8 @@ public class BoardService {
 
     //조회
     public BoardResponseDto getBoard(Long id){
-        Board board = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("게시글이 존재하지 않습니다."));
+        Board board = repository.findById(id).orElseThrow(() ->
+                new IllegalArgumentException("게시글이 존재하지 않습니다."));
         board.increaseViews();
         repository.save(board);
         return BoardResponseDto.builder()
@@ -73,8 +74,34 @@ public class BoardService {
 
 
     //수정
+    public BoardResponseDto updateBoard(Long id ,BoardRequestDto requestDto){
+        // 기존 게시글을 찾음
+        Board board = repository.findById(id).orElseThrow(() -> 
+        new IllegalArgumentException("게시글이 존재하지 않습니다."));
+
+        // 요청받은 내용을 업데이트
+        board.setTitle(requestDto.getTitle());
+        board.setContent(requestDto.getContent());
+
+        // DB에 저장
+        Board updateBoard = repository.save(board);
+
+        // Entity -> ResponseDto 변환 후 반환
+        return BoardResponseDto.builder()
+                .id(updateBoard.getId())
+                .title(updateBoard.getTitle())
+                .writer(updateBoard.getWriter())
+                .content(updateBoard.getContent())
+                .views(updateBoard.getViews())
+                .createdAt(updateBoard.getCreatedAt())
+                .build();
+
+    }
 
 
     //삭제
+    public void deleteBoard(Long id){
+        repository.deleteById(id);
+    }
 
 }

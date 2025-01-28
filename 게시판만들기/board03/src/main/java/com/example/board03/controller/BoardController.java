@@ -33,4 +33,16 @@ public class BoardController {
     public BoardResponseDto createdBoard(@RequestBody BoardRequestDto requestDto){
         return service.createdBoard(requestDto);
     }
+
+    @PutMapping("/{id}")
+    public BoardResponseDto updateBoard(@PathVariable Long id ,@RequestBody BoardRequestDto requestDto){
+        return service.updateBoard(id,requestDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBoard(@PathVariable Long id){
+        service.deleteBoard(id);
+    }
+
+
 }
