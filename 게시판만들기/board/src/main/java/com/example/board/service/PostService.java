@@ -1,5 +1,6 @@
 package com.example.board.service;
 
+import com.example.board.dto.CommentDto;
 import com.example.board.dto.PostRequestDto;
 import com.example.board.dto.PostResponseDto;
 import com.example.board.entity.Comment;
@@ -36,9 +37,9 @@ public class PostService {
 
     public PostResponseDto getPostById(Long id) {
         Post post = postRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Post not found with id: " + id));
+                .orElseThrow(() -> new IllegalArgumentException("글을 찾을 수 없습니다 id: " + id));
 
-        List<Comment> comments = commentRepository.findById(id);
+        List<Comment> comments = commentRepository.findByPostId(id);
 
         PostResponseDto dto = new PostResponseDto();
         dto.setId(post.getId());
@@ -48,7 +49,15 @@ public class PostService {
         dto.setCategory(post.getCategory());
 
         // 댓글 목록 DTO로 변환 
-        
+        List<CommentDto> commentDtos = comments.stream()
+                .map(comment -> {
+                    CommentDto commentDto = new CommentDto();
+                    commentDto.setCommentContent(comment.getCommentContent());
+                    commentDto.setCommentAuthor(comment.getCommentAuthor());
+                    return commentDto;
+                })
+                .collect(Collectors.toList());
+        dto.setComments(commentDtos);
 
         return dto;
     }

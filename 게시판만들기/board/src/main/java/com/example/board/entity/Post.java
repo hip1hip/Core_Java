@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -29,10 +30,8 @@ public class Post {
 
     private String category;
 
-//    @OneToMany
-//    private List<Comment> comments;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Comment> comments = new ArrayList<>();
 
-    public List<Comment> getComment() {
-        return getComment();
-    }
+
 }

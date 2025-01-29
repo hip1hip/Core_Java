@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.ArrayList;
 
 
 @Getter
@@ -15,6 +17,6 @@ public class PostResponseDto {
     private String content;
     private String author;
     private String category;
-    private Comment comment;
+    private List<CommentDto> comments = new ArrayList<>();
 
 }
