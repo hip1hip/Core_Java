@@ -14,6 +14,7 @@ import java.util.List;
 public class BoardService {
 
     final BoardRepository repository;
+    final CommentService commentService;
 
     //글생성
     public BoardResponseDto crateBoard(BoardRequestDto requestDto){
@@ -77,6 +78,7 @@ public class BoardService {
                 .updatedAt(board.getUpdatedAt())
                 .viewCount(board.getViewCount())
                 .likeCount(board.getLikeCount())
+                .comments(commentService.getComment(board.getId()))
                 .build();
 
 
