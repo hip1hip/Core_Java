@@ -1,16 +1,20 @@
 package com.example.board04.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
-@Setter // JSON 데이터 매핑을 위해 필요
-@NoArgsConstructor
-public class BoardRequestDto {
-    private String title;
+@Builder
+public class CommentResponseDto {
+    private Long id;
     private String content;
     private String writer;
+    private LocalDateTime createdAt;
+    
+
+    
 }

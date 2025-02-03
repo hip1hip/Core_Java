@@ -4,13 +4,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
-@Setter // JSON 데이터 매핑을 위해 필요
+@Setter
 @NoArgsConstructor
-public class BoardRequestDto {
-    private String title;
+public class CommentRequestDto {
     private String content;
     private String writer;
+
 }
