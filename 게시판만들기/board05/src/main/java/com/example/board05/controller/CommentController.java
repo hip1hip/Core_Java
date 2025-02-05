@@ -7,17 +7,35 @@ import com.example.board05.service.CommentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
-@RequestMapping("board/{board_id}/comment")
+@RequestMapping("boards/{board_id}/comments")
 public class CommentController {
 
     final CommentService service;
 
-
     @PostMapping
-    public CommentResponse cresteComment (@PathVariable Board board_id, @RequestBody CommentRequest request){
+    public CommentResponse createComment (@PathVariable Long board_id, @RequestBody CommentRequest request){
         return service.createComment(board_id ,request);
     }
+
+    @GetMapping
+    public List<CommentResponse> findAllComment(){
+        return service.findAllComment();
+    }
+
+    @PutMapping("{id}")
+    public CommentResponse updateComment(@PathVariable Long id, @RequestBody CommentRequest request){
+        return service.updateComment(id, request);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteComment(@PathVariable Long id){
+        service.deleteComment(id);
+    }
+
+
 
 }

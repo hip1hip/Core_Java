@@ -4,6 +4,7 @@ import com.example.board04.dto.CommentResponseDto;
 import com.example.board04.entity.Board;
 import com.example.board04.entity.Comment;
 import com.example.board04.repository.BoardRepository;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+//@AllArgsConstructor
 public class CommentService {
 
     private final CommentRepository commentRepository;

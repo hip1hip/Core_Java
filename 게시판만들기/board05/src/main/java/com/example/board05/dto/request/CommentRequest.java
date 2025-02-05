@@ -6,8 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class CommentRequest {
-
     private String content;
     private String writer;
-
+//    private String board_id;
 }
