@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.board06jsp.mapper.BoardMapper">
+    <insert id="insertBoard" parameterType="com.example.board06jsp.domain.BoardDTO">
+        INSERT INTO board (title, content, writer, created_date)
+        VALUES (#{title}, #{content}, #{writer}, NOW())
+    </insert>
+
+    <select id="selectAll" resultType="com.example.board06jsp.domain.BoardDTO">
+        SELECT * FROM board
+    </select>
+
+    <select id="selectOne" parameterType="long"  resultType="com.example.board06jsp.domain.BoardDTO">
+        SELECT * FROM board WHERE id = #{id}
+    </select>
+
+</mapper>
